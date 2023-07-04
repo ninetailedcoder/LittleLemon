@@ -4,10 +4,10 @@ from django.db import models
 class menu(models.Model):
     title = models.CharField(max_length=255)
     price = models.FloatField(max_length=10)
-    inventory = models.IntegerField(max_length=5)
+    inventory = models.IntegerField()
 
     def __str__(self):
-        return self.title
+        return f'{self.title} : {str(self.price)}'
     
 class booking(models.Model):
     name = models.CharField(max_length=255)
